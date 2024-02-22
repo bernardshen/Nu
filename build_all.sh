@@ -12,7 +12,9 @@ if [[ ! -v NODE_TYPE ]]; then
 fi
 
 sudo apt update
-sudo apt install gcc-13 g++-13 -y
+sudo apt install gcc-13 g++-13 python3-pip -y
+pip3 install --user meson
+export PATH=$HOME/.local/bin:$PATH
 
 # Apply patches.
 patch_file=caladan/build/$NODE_TYPE.patch
