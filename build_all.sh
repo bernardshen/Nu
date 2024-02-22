@@ -11,6 +11,9 @@ if [[ ! -v NODE_TYPE ]]; then
     not_supported
 fi
 
+sudo apt update
+sudo apt install gcc-13 g++-13 -y
+
 # Apply patches.
 patch_file=caladan/build/$NODE_TYPE.patch
 
@@ -30,5 +33,5 @@ make clean
 make -j`nproc`
 
 # Setup Nu.
-./setup.sh
+# ./setup.sh
 
