@@ -11,10 +11,15 @@ if [[ ! -v NODE_TYPE ]]; then
     not_supported
 fi
 
-sudo apt update
-sudo apt install gcc-13 g++-13 python3-pip -y
-pip3 install --user meson
-export PATH=$HOME/.local/bin:$PATH
+if [[ $NODE_TYPE == xl170]]; then
+    sudo apt update
+    sudo apt install software-properties-common -y
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+    sudo apt update
+    sudo apt install gcc-13 g++-13 python3-pip -y
+    pip3 install --user meson
+    export PATH=$HOME/.local/bin:$PATH
+fi
 
 # Apply patches.
 patch_file=caladan/build/$NODE_TYPE.patch
