@@ -11,7 +11,7 @@ if [[ ! -v NODE_TYPE ]]; then
     not_supported
 fi
 
-if [[ $NODE_TYPE == xl170]]; then
+if [[ $NODE_TYPE == xl170 ]]; then
     sudo apt update
     sudo apt install software-properties-common -y
     sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
