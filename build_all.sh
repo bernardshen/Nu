@@ -11,15 +11,10 @@ if [[ ! -v NODE_TYPE ]]; then
     not_supported
 fi
 
-if [[ $NODE_TYPE == xl170 ]] || [[ $NODE_TYPE == c6525 ]]; then
-    sudo apt update
-    sudo apt install software-properties-common -y
-    sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-    sudo apt update
-    sudo apt install gcc-13 g++-13 python3-pip libboost-all-dev -y
-    pip3 install --user meson
-    export PATH=$HOME/.local/bin:$PATH
-fi
+sudo apt update
+sudo apt install python3-pip libboost-all-dev -y
+pip3 install --user meson
+export PATH=$HOME/.local/bin:$PATH
 
 # Apply patches.
 patch_file=caladan/build/$NODE_TYPE.patch
