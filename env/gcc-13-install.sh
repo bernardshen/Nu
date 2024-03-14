@@ -45,7 +45,7 @@ cd gcc-$GCC_MAJOR_VERSION-build/
 # Installing GCC into $HOME/opt/gcc-x.y.z is normally a good idea.
 # To install it globally, installing into /usr/local/gcc-x.y.z is normally a good idea.
 
-$PWD/../$GCC_CHECKOUT_DIR_NAME/configure --prefix=/usr/local --enable-languages=$ENABLED_LANGUAGES --disable-multilib --program-suffix=$GCC_MAJOR_VERSION
+$PWD/../$GCC_CHECKOUT_DIR_NAME/configure --prefix=/usr/local --enable-languages=$ENABLED_LANGUAGES --disable-multilib --program-suffix=-$GCC_MAJOR_VERSION
 
 # Next one might take up to 3.5 hours in case of GCC 13
 make -j`nproc`
