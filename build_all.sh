@@ -11,10 +11,10 @@ if [[ ! -v NODE_TYPE ]]; then
     not_supported
 fi
 
-sudo apt update
-sudo apt install python3-pip libboost-all-dev -y
-pip3 install --user meson
-export PATH=$HOME/.local/bin:$PATH
+#sudo apt update
+#sudo apt install python3-pip libboost-all-dev -y
+#pip3 install --user meson
+#export PATH=$HOME/.local/bin:$PATH
 
 # Apply patches.
 patch_file=caladan/build/$NODE_TYPE.patch
